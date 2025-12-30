@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kavima 💙 You’ve Got This, Doctor</title>
+
+  <style>
+    :root{
+      --bg-light:#f9fbfc;
+      --bg-dark:#0f1f2b;
+      --card-light:#ffffff;
+      --card-dark:#1c2f3d;
+      --text-light:#2c3e50;
+      --text-dark:#e6f1f7;
+      --accent:#9fd3f0;
+      --green:#cfe9dc;
+    }
+
+    body{
+      margin:0;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background:
+        linear-gradient(rgba(249,251,252,0.92), rgba(217,236,247,0.92)),
+        url('hospital_bg.jpg') center/cover fixed no-repeat;
+      color:var(--text-light);
+      transition:all 0.4s ease;
+    }
+
+    body.night{
+      background:linear-gradient(180deg, var(--bg-dark), #162c3a);
+      color:var(--text-dark);
+    }
+
+    header{
+      padding:3rem 1.5rem;
+      text-align:center;
+      animation:fadeIn 2s ease;
+    }
+
+    section{
+      padding:3rem 1.5rem;
+      max-width:900px;
+      margin:auto;
+    }
+
+    .card{
+      background:var(--card-light);
+      border-radius:18px;
+      padding:2rem;
+      margin-bottom:2rem;
+      box-shadow:0 12px 28px rgba(0,0,0,0.08);
+      transition:background 0.4s ease;
+    }
+
+    body.night .card{background:var(--card-dark);}
+
+    h1,h2{color:#3b6f8f;}
+    body.night h1, body.night h2{color:#bfe7ff;}
+
+    button{
+      background:linear-gradient(135deg, var(--accent), var(--green));
+      border:none;
+      padding:0.8rem 1.4rem;
+      border-radius:30px;
+      cursor:pointer;
+      margin-top:1rem;
+      font-size:0.95rem;
+    }
+
+    .hidden{display:none; margin-top:1rem;}
+
+    .toggle{
+      position:fixed;
+      top:15px;
+      right:15px;
+      z-index:10;
+    }
+
+    .motivation{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:1.5rem;
+    }
+
+    .figure{text-align:center;}
+    .figure img{
+      width:100%;
+      max-width:200px;
+      border-radius:14px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    footer{
+      text-align:center;
+      padding:2rem;
+      font-size:0.85rem;
+      opacity:0.85;
+    }
+
+    @keyframes fadeIn{
+      from{opacity:0; transform:translateY(10px);} 
+      to{opacity:1; transform:translateY(0);} 
+    }
+  </style>
+
+  <script>
+    function toggle(id){
+      document.getElementById(id).classList.toggle('hidden');
+    }
+
+    function nightMode(){
+      document.body.classList.toggle('night');
+    }
+
+    const affirmations=[
+      "You are calm. You are prepared. You are enough.",
+      "Kavima, take it one question at a time.",
+      "Fear means you care — and caring makes you a great doctor.",
+      "Your effort matters more than perfection.",
+      "You are already a doctor in mindset and strength."
+    ];
+
+    window.onload=()=>{
+      document.getElementById('affirm').innerText=
+        affirmations[Math.floor(Math.random()*affirmations.length)];
+    }
+  </script>
+</head>
+
+<body>
+
+<button class="toggle" onclick="nightMode()">🌙 Night Mode</button>
+
+<header>
+  <h1>Kavima 💙</h1>
+  <p>This space is just for you, Kaviya. Whenever fear comes, come here. You are safe. You are not alone.</p>
+</header>
+
+<section>
+  <div class="card">
+    <h2>🌿 Daily Gentle Reminder</h2>
+    <p id="affirm"></p>
+  </div>
+
+  <div class="card">
+    <h2>🩺 You’ve Got This, Doctor</h2>
+    <p>Exams can feel heavy. That doesn’t mean you’re weak. It means you care deeply.</p>
+    <button onclick="toggle('scared')">Read this when you feel scared</button>
+    <div id="scared" class="hidden">
+      <p>Breathe, Kavima. One question at a time. You don’t need to know everything — just what you know right now.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>💙 Message from Amma & Appa</h2>
+    <p>
+      Kavima take care of your health, it is the first priority 💗<br/>
+      nalla saapdu, nalla thoongu.<br/>
+      romba laam bayapudaadha.<br/>
+      Exam easy ah dhaan varum.<br/>
+      oru prachanayum illa — mudinchara vara padi podhum.<br/>
+      ellam nalla padiyaa eluthalaam nu naanga ellarum vendikirom.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>✨ Inspired & Strong</h2>
+    <div class="motivation">
+      <div class="figure">
+        <img src="vijay.png" alt="Vijay – confidence and calm strength">
+        <p><strong>Vijay</strong></p>
+        <p>Quiet confidence. Strength through consistency.</p>
+      </div>
+      <div class="figure">
+        <img src="dhruv_vikram.png" alt="Dhruv Vikram – resilience and intensity">
+        <p><strong>Dhruv Vikram</strong></p>
+        <p>Intensity, honesty, and believing in your inner fire.</p>
+      </div>
+    </div>
+    <p style="font-size:0.8rem; margin-top:1rem; opacity:0.7;">
+      Used only as private motivational symbols — respectful and non‑commercial.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>🌱 One Step Closer to House Surgeon</h2>
+    <p>Picture yourself walking hospital corridors with calm confidence.</p>
+    <p>Kavima, you are already a doctor in heart and strength. These exams are just a step.</p>
+  </div>
+
+  <div class="card">
+    <h2>⏰ Read This Before Exam Day</h2>
+    <p>If fear visits you the night before, pause here for a moment.</p>
+    <p>You have studied honestly. You have shown up even on tired days. That effort stays with you.</p>
+    <p>Go in gently. Read the question slowly. Answer with what you know. That is enough.</p>
+    <p>No paper can measure your kindness, patience, or the doctor you are becoming.</p>
+  </div>
+</section>
+
+<footer>
+  <p><strong>We are so proud of you, Kavima 🩷</strong></p>
+  <p>You chose a path that asks for courage, patience, and heart — and you walked it.</p>
+  <p>No matter how exams go, you are loved, supported, and deeply respected.</p>
+  <p>This space exists only to remind you how far you’ve come.</p>
+</footer>
+
+</body>
+</html>
